@@ -6,13 +6,14 @@ const Schema = {
     type: "object",
     properties: {
         _id: {type: "string"},
-        task: {type: "string"},
-        completed: {type: "boolean"}
+        name: {type: "string"},
+        todos: {type: "array"},
+        status: {type: "string"}
     }, 
-    required: ["_id", "task", "completed"],
+    required: ["name"],
     additionalProperties: true
 }
 
-const putValidate = ajv.compile(Schema)
+const postValidate = ajv.compile(Schema)
 
-export default putValidate;
+export default postValidate;

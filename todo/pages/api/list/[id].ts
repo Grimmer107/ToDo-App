@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from "next"
-import { getTodoList, deleteTodoList } from "@/controllers/todoList"
+import { getTodoList, deleteTodoList, changeStatusList } from "@/controllers/todoList"
 import { ResponseFuncs } from "../../../utils/types"
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
@@ -8,7 +8,8 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
 
   const handleCase: ResponseFuncs = {
     GET: getTodoList,
-    DELETE: deleteTodoList
+    DELETE: deleteTodoList,
+    PUT: changeStatusList,
   }
 
   const response = handleCase[method]

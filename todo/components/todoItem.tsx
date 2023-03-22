@@ -1,19 +1,22 @@
-import React, {useState} from 'react';
+import React, {useState, useContext } from 'react';
 import { Todo } from '@/utils/types'
+import { TodoContext } from '@/context/TodoContext';
 import TodoDelete from './TodoDelete';
 
 const TodoItem:React.FC<Todo> = (props) => {
 
     const [todoComplete, setTodoComplete] = useState(props.completed)
     const [todoDelete, setTodoDelete] = useState(false)
+    const mutate = useContext(TodoContext)
 
     const toggleComplete = async (event:any) => {
         setTodoComplete((prevstate) => !prevstate)
-        await fetch(process.env.API_URL + "\\" + props._id as string, {
+        await fetch(`${process.env.API_URL}/todo/${props._id}`, {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ _id:props._id, task: props.task, completed: event.target.checked })
         })
+        mutate && mutate()
     }
 
     return (

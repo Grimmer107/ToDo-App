@@ -1,8 +1,16 @@
 import React from 'react';
+import { useSession } from 'next-auth/react';
 
-const TodoListDelete = (props:any) => {
+interface Props {
+    id?: String,
+    setTodoDelete: Function
+}
+const TodoListDelete:React.FC<Props> = (props) => {
+
+    const { data: session } = useSession();
+
     const ondeleteHandle = async () => {
-        await fetch(process.env.API_URL + "\\" + props.id as string, {
+        await fetch(`${process.env.API_URL}/list/${props.id}?email=${session?.user?.email}`, {
             method: 'DELETE',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ _id: props.id })

@@ -3,10 +3,10 @@ import React from 'react';
 const TodoDelete = (props:any) => {
 
     const ondeleteHandle = async () => {
-        await fetch(process.env.API_URL + "\\" + props.id as string, {
+        await fetch(`${process.env.API_URL}/todo/${props.id}`, {
             method: 'DELETE',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ _id: props.id })
+            body: JSON.stringify({ _id: props.id, list_id: localStorage.getItem('listID') })
         })
         let TodoDelete = props.setTodoDelete
         TodoDelete(true)

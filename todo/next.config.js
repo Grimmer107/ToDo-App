@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   env: {
-    API_URL:'http://localhost:3000/api/todo'
+    API_URL:'http://localhost:3000/api'
   },
   async redirects() {
     return [

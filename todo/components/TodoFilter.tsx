@@ -1,17 +1,17 @@
 import React from 'react';
 
 interface Props {
-    filter: String | any,
-    setFilter: Function
+    filter?: string | number | readonly string[],
+    setFilter: Function,
+    options: Array<any>
 }
 
-const TodoFilter:React.FC<Props> = ({filter, setFilter}) => {
+const TodoFilter:React.FC<Props> = ({filter, setFilter, options}) => {
 
-    const onChangeHandler = (e:any) => {
+    const onChangeHandler = (e:React.ChangeEvent<HTMLSelectElement>) => {
         setFilter(e.target.value)
     }
 
-    const options = ["Completed", "Not Completed", "None"]
     let content = options.map(option => {
         return (<option key={option} className='hover:bg-item' value={option} >{option}</option>)
     })

@@ -13,7 +13,7 @@ module.exports = {
         'item': '#43446a'
       },
       height: {
-        "screenset": "90vh"
+        "screenset": "82.5vh"
       }
     },
   },

@@ -14,7 +14,7 @@ export const getUser = async (req: NextApiRequest, res: NextApiResponse) => {
 export const postUser = async (req: NextApiRequest, res: NextApiResponse) => {    
     try {
         const { User } = await connect()
-        const new_user = await User.create(req.body)
+        const new_user = await User.create({email: req.body.email, password: req.body.password, lists: [] })
         res.json(new_user)
     } catch (error) {
         res.status(400).json({ error })

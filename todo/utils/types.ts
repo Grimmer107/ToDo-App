@@ -7,18 +7,20 @@ export interface ResponseFuncs {
 }
   
 export interface Todo {
-    _id?: number
+    _id?: string
     task: string
     completed: boolean
 }
 
 export interface List {
-    id?: number,
+    _id?: string,
+    name: string,
+    status: string,
     todos: Todo[]
 }
 
 export interface User {
-    _id: number,
+    _id: string,
     email: string,
     password: string, 
     lists: List[]

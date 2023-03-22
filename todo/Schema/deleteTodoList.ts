@@ -6,13 +6,11 @@ const Schema = {
     type: "object",
     properties: {
         _id: {type: "string"},
-        task: {type: "string"},
-        completed: {type: "boolean"}
     }, 
-    required: ["_id", "task", "completed"],
+    required: ["_id"],
     additionalProperties: true
 }
 
-const putValidate = ajv.compile(Schema)
+const deleteListValidate = ajv.compile(Schema)
 
-export default putValidate;
+export default deleteListValidate;

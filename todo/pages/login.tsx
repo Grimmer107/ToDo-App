@@ -1,6 +1,5 @@
 import React, {useRef} from 'react';
 import Head from 'next/head';
-import Link from 'next/link';
 import { useRouter } from 'next/router'
 import { signIn } from 'next-auth/react'
 
@@ -17,8 +16,9 @@ const Index = () => {
                 email: emailRef.current.value,
                 password: passwordRef.current.value,
             })
+
             if (res && res.ok) {
-                router.push('http://localhost:3000/')
+                router.push('http://localhost:3000/TodoLists')
             } else {
                 router.push('http://localhost:3000/api/auth/signin')
             }

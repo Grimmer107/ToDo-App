@@ -1,6 +1,6 @@
-import React, {useRef, useState} from 'react';
+import React from 'react';
 import { Todo } from '@/utils/types';
-import TodoItem from './todoItem';
+import TodoItem from './TodoItem';
 
 interface Props {
     data: Array<Todo>,
@@ -10,19 +10,17 @@ interface Props {
     search: String
 }
 
-const TodoList:React.FC<Props> = ({data, error, isLoading, filter, search}) => {
+const TodosList:React.FC<Props> = ({data, error, isLoading, filter, search}) => {
 
     if (error) {
         return <p>{error}</p>
     }
 
-    let content:any;
+    let content
     if (data) {
 
         if (filter !== "None") {
-            console.log("Filter", filter)
             let filtertype = filter == "Completed" ? true : false;
-            console.log(filtertype)
             content = data.filter((item:Todo) => {
                 return item.completed === filtertype
             })
@@ -51,4 +49,4 @@ const TodoList:React.FC<Props> = ({data, error, isLoading, filter, search}) => {
     );
 };
 
-export default TodoList;
+export default TodosList;

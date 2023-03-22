@@ -1,5 +1,4 @@
 import mongoose from "mongoose"
-
 const { DATABASE_URL } = process.env
 
 export const connect = async () => {
@@ -9,19 +8,21 @@ export const connect = async () => {
 
   const TodoSchema = new mongoose.Schema({
     task: String,
-    completed: Boolean,
+    completed: Boolean
   })
 
   const UserSchema = new mongoose.Schema({
     email: String,
     password: String,
-    lists: {
+    lists: [{
       type: mongoose.Schema.Types.ObjectId,
       ref: 'List',
-    }
+    }]
   })
 
   const ListSchema = new mongoose.Schema({
+    name: String,
+    status: String,
     todos: [{
       type: mongoose.Schema.Types.ObjectId,
       ref: 'Todo',

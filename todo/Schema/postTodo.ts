@@ -5,7 +5,7 @@ const ajv = new Ajv({allErrors: true})
 const Schema = {
     type: "object",
     properties: {
-        _id: {type: "integer"},
+        _id: {type: "string"},
         task: {type: "string"},
         completed: {type: "boolean"}
     }, 

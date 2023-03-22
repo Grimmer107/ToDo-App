@@ -1,16 +1,24 @@
 import React, {useRef} from 'react';
-const TodoCreate = () => {
+import { useSession } from 'next-auth/react';
 
+interface Props {
+  setUpdate: Function,
+}
+
+const TodoCreate:React.FC<Props> = ({setUpdate}) => {
+
+  const { data: session } = useSession()
   const inputRef = useRef<HTMLInputElement>(null)
 
   const onClickHandle = async () => {
       if (inputRef.current != null) {
-        await fetch(process.env.API_URL as string, {
+        await fetch(`${process.env.API_URL}/todo?email=${session?.user?.email}&name=${localStorage.getItem("listname")}`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ task: inputRef.current.value, completed: false })
         })
         inputRef.current.value = ""
+        setUpdate()
       }
   }
 

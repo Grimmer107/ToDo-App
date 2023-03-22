@@ -19,7 +19,7 @@ export default NextAuth({
                         throw new Error(user.message);
                     }
                     if (res.ok && user[0].email === credentials.email && user[0].password === credentials.password) {
-                        return user;
+                        return user[0]
                     } else {
                         return null;
                     }

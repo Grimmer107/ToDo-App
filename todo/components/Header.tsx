@@ -26,9 +26,9 @@ const Header:React.FC<Props> = ({email}) => {
             </div>
             <div className='flex align-middle mr-8'>
                 <p className='text-sm text-white m-auto mr-4'>{email}</p>
-                <button onClick={() => {
-                    signOut()
-                    router.push("http://localhost:3000")
+                <button onClick={async () => {
+                    await signOut()
+                    await router.push("http://localhost:3000")
                 }} className='text-sm text-white hover:font-semibold w-20'>Sign out</button>
             </div>
         </div>

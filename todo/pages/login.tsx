@@ -2,6 +2,7 @@ import React, { useRef } from "react"
 import Head from "next/head"
 import { useRouter } from "next/router"
 import { signIn } from "next-auth/react"
+import toast, { Toaster } from "react-hot-toast"
 
 const Index = () => {
 	const router = useRouter()
@@ -10,16 +11,25 @@ const Index = () => {
 
 	const onClickHandle = async () => {
 		if (emailRef.current && passwordRef.current) {
+			if (emailRef.current.value === "") {
+				toast(`Email not entered!`)
+				return
+			} else if (passwordRef.current.value === "") {
+				toast(`Password not entered!`)
+				return
+			}
 			const res = await signIn("credentials", {
 				redirect: false,
-				email: emailRef.current.value,
-				password: passwordRef.current.value
+				email: emailRef.current!.value,
+				password: passwordRef.current!.value
 			})
 
 			if (res && res.ok) {
 				router.push("http://localhost:3000/TodoLists")
 			} else {
-				router.push("http://localhost:3000/api/auth/signin")
+				emailRef.current!.value = ""
+				passwordRef.current!.value = ""
+				toast(`Invalid email or password!`)
 			}
 		}
 	}
@@ -39,6 +49,18 @@ const Index = () => {
 				/>
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
+			<Toaster
+				toastOptions={{
+					className: "bg-primary text-white",
+					duration: 3000,
+					style: {
+						border: "1px solid #272851",
+						padding: "16px",
+						color: "#272851",
+						backgroundColor: "#f9e45b"
+					}
+				}}
+			/>
 			<div className="w-[100%] m-auto text-center mt-28">
 				<h2 className="m-auto text-primary font-medium text-[2em]">
 					Todo App

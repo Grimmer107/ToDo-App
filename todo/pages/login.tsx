@@ -52,7 +52,7 @@ const Index = () => {
 			<Toaster
 				toastOptions={{
 					className: "bg-primary text-white",
-					duration: 3000,
+					duration: 5000,
 					style: {
 						border: "1px solid #272851",
 						padding: "16px",
@@ -61,12 +61,12 @@ const Index = () => {
 					}
 				}}
 			/>
-			<div className="w-[100%] m-auto text-center mt-28">
-				<h2 className="m-auto text-primary font-medium text-[2em]">
-					Todo App
-				</h2>
+			<div className="w-[100%] m-auto text-center mt-28 font-caveat">
+				<div className="w-1/3 border-2 m-auto py-[1em] rounded-md bg-primary text-white">
+					<h2 className="m-auto font-medium text-[2em]">ToDo App</h2>
+				</div>
 			</div>
-			<div className="w-1/3 m-auto mt-4 px-10 py-12 rounded-md text-gray-300 bg-primary flex flex-col justify-items-center align-middle ">
+			<div className="w-1/3 m-auto mt-2 px-10 py-12 rounded-md text-gray-300 bg-primary flex flex-col justify-items-center align-middle ">
 				<p className="w-1/4 p-1 text-center m-auto text-white font-semibold text-lg">
 					Sign in
 				</p>
@@ -77,7 +77,7 @@ const Index = () => {
 						name="email"
 						type="email"
 						placeholder={"Enter email"}
-						className="bg-item rounded-md px-4 py-1 outline-none text-md text-gray-400"
+						className="bg-item rounded-md px-4 py-1 outline-none text-md text-gray-100"
 					/>
 				</div>
 				<div className="flex flex-col w-3/4 m-auto">
@@ -87,7 +87,7 @@ const Index = () => {
 						name="password"
 						type="password"
 						placeholder={"Password"}
-						className="bg-item rounded-md px-4 py-1 outline-none text-md text-gray-400"
+						className="bg-item rounded-md px-4 py-1 outline-none text-md text-gray-100"
 					/>
 				</div>
 				<button

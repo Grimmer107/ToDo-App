@@ -49,7 +49,6 @@ const Register = () => {
 					name="viewport"
 					content="width=device-width, initial-scale=1"
 				/>
-				<link rel="icon" href="/favicon.ico" />
 			</Head>
 			<Toaster
 				toastOptions={{
@@ -63,12 +62,12 @@ const Register = () => {
 					}
 				}}
 			/>
-			<div className="w-[100%] m-auto text-center mt-28">
-				<h2 className="m-auto text-primary font-medium text-[2em]">
-					Todo App
-				</h2>
+			<div className="w-[100%] m-auto text-center mt-28 font-caveat">
+				<div className="w-1/3 border-2 m-auto py-[1em] rounded-md bg-primary text-white">
+					<h2 className="m-auto font-medium text-[2em]">ToDo App</h2>
+				</div>
 			</div>
-			<div className="w-1/3 m-auto mt-4 px-10 py-12 rounded-md text-gray-300 bg-primary flex flex-col justify-items-center align-middle ">
+			<div className="w-1/3 m-auto mt-2 px-10 py-12 rounded-md text-gray-300 bg-primary flex flex-col justify-items-center align-middle ">
 				<p className="w-1/4 p-1 text-center m-auto text-white font-semibold text-lg">
 					Sign up
 				</p>

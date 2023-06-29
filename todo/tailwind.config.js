@@ -14,6 +14,9 @@ module.exports = {
       },
       height: {
         "screenset": "82.5vh"
+      },
+      fontFamily: {
+        "caveat": ['Caveat', "cursive"]
       }
     },
   },

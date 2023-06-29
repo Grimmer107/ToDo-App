@@ -20,7 +20,7 @@ const TodoFilter: React.FC<Props> = ({ filter, setFilter, options }) => {
 	})
 
 	return (
-		<div className="flex bg-primary rounded-lg w-[100%] py-[0.55rem] pl-2 pr-1">
+		<div className="flex bg-primary rounded-lg py-[0.55rem] pl-2 pr-1">
 			<select
 				defaultValue={filter}
 				onChange={e => onChangeHandler(e)}

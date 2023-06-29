@@ -25,7 +25,7 @@ const TodoListCreate: React.FC<Props> = ({ setUpdate }) => {
 	}
 
 	return (
-		<div className="w-5/6 h-12 py-4 px-8 mt-8 bg-primary m-auto rounded-full flex align-middle justify-between relative">
+		<div className="w-5/6 h-12 py-4 px-8 mt-8 mb-2 bg-primary m-auto rounded-full flex align-middle justify-between relative">
 			<input
 				ref={inputRef}
 				type="text"

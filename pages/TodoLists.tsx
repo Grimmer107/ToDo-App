@@ -40,13 +40,21 @@ export default function Home() {
 	if (status === "unauthenticated") {
 		return (
 			<div className="m-auto w-[100%] h-[100vh] flex text-center">
-				<span className="m-auto">Access Denied</span>
+				<h1 className="m-auto text-primary text-xl font-bold">
+					Access Denied
+				</h1>
 			</div>
 		)
 	}
 
-	if (error) {
-		return <p>{error}</p>
+	if (error || data.error) {
+		return (
+			<div className="m-auto w-[100%] h-[100vh] flex">
+				<h1 className="m-auto text-primary text-xl font-bold">
+					Internal Server Error!
+				</h1>
+			</div>
+		)
 	}
 
 	let content

@@ -67,15 +67,19 @@ export default function Todo() {
 	return (
 		<div className="p-0">
 			<Header email={session?.user?.email as String} />
-			<div className="bg-background p-2 m-auto w-1/2 h-screenset rounded-lg overscroll-none">
+			<div className="bg-background py-2 px-1 md:px-2 m-auto w-[90%] md:w-3/4 lg:w-1/2 h-screenset rounded-lg overscroll-none">
 				<TodoCreate setUpdate={mutate} />
-				<div className="w-5/6 px-3 flex justify-between m-auto mt-2">
-					<TodoSearch search={search} setSearch={setSearch} />
-					<TodoFilter
-						options={["Completed", "Not Completed", "None"]}
-						filter={filter}
-						setFilter={setFilter}
-					/>
+				<div className="w-[90%] md:w-5/6 flex m-auto mt-2 justify-between pr-2 lg:gap-2">
+					<div className="w-[70%]">
+						<TodoSearch search={search} setSearch={setSearch} />
+					</div>
+					<div className="w-[30%]">
+						<TodoFilter
+							options={["Completed", "Not Completed", "None"]}
+							filter={filter}
+							setFilter={setFilter}
+						/>
+					</div>
 				</div>
 				<div className="mt-2 h-5/6">
 					<TodoContext.Provider value={mutate}>
@@ -91,7 +95,7 @@ export default function Todo() {
 			</div>
 			<button
 				onClick={() => router.back()}
-				className="text-white bg-primary rounded-lg ml-4 text-sm py-3 px-4"
+				className="text-white bg-primary rounded-lg ml-4 text-sm py-3 px-4 my-4"
 			>
 				Go Back
 			</button>

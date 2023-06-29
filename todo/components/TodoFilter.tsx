@@ -20,11 +20,11 @@ const TodoFilter: React.FC<Props> = ({ filter, setFilter, options }) => {
 	})
 
 	return (
-		<div className="flex relative">
+		<div className="flex bg-primary rounded-lg w-[100%] py-[0.55rem] pl-2 pr-1">
 			<select
 				defaultValue={filter}
 				onChange={e => onChangeHandler(e)}
-				className="bg-primary outline-none text-gray-400 border-none text-sm py-2 px-4 mt-0.5 ml-2 rounded-lg"
+				className="bg-primary outline-none text-gray-400 border-none rounded-lg w-[100%]"
 			>
 				{content}
 			</select>

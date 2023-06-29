@@ -9,7 +9,7 @@ const Header: React.FC<Props> = ({ email }) => {
 	const router = useRouter()
 
 	return (
-		<div>
+		<div className="w-[100%]">
 			<Head>
 				<title>ToDo App</title>
 				<meta name="description" content="Todo list App" />
@@ -40,7 +40,9 @@ const Header: React.FC<Props> = ({ email }) => {
 					</p>
 				</div>
 				<div className="flex align-middle mr-8">
-					<p className="text-sm text-white m-auto mr-4">{email}</p>
+					<p className="hidden md:block text-sm text-white m-auto mr-4">
+						{email}
+					</p>
 					<button
 						onClick={async () => {
 							await signOut()

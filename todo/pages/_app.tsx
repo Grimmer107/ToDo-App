@@ -4,7 +4,7 @@ import { SessionProvider } from "next-auth/react"
 import { Session } from "next-auth"
 import { Suspense } from "react"
 import { DefaultSeo } from "next-seo"
-import CircleLoader from "react-spinners/CircleLoader"
+import ClipLoader from "react-spinners/ClipLoader"
 import ErrorBoundary from "../components/ErrorBoundary"
 
 export default function App({
@@ -14,7 +14,7 @@ export default function App({
 	return (
 		<ErrorBoundary
 			fallback={
-				<div className="m-auto w-5/6 h-screenset text-center">
+				<div className="m-auto w-[100%] h-[100vh] text-center">
 					Could not fetch data.
 				</div>
 			}
@@ -22,11 +22,11 @@ export default function App({
 			<DefaultSeo title="Todo App" description="A todo app in Next JS" />
 			<Suspense
 				fallback={
-					<div className="m-auto flex w-1/2 justify-center align-middle">
-						<CircleLoader
-							color={"bg-background"}
+					<div className="m-auto w-[100%] h-[100vh] flex">
+						<ClipLoader
+							color={"black"}
 							loading={true}
-							// cssOverride={}
+							cssOverride={{ margin: "auto" }}
 							size={150}
 							aria-label="Loading Spinner"
 							data-testid="loader"

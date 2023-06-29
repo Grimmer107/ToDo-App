@@ -62,13 +62,13 @@ const Register = () => {
 					}
 				}}
 			/>
-			<div className="w-[100%] m-auto text-center mt-28 font-caveat">
-				<div className="w-1/3 border-2 m-auto py-[1em] rounded-md bg-primary text-white">
+			<div className="w-[80%] md:w-1/2 lg:w-1/3 m-auto text-center mt-24 font-caveat">
+				<div className="border-2 m-auto py-[1em] rounded-md bg-primary text-white">
 					<h2 className="m-auto font-medium text-[2em]">ToDo App</h2>
 				</div>
 			</div>
-			<div className="w-1/3 m-auto mt-2 px-10 py-12 rounded-md text-gray-300 bg-primary flex flex-col justify-items-center align-middle ">
-				<p className="w-1/4 p-1 text-center m-auto text-white font-semibold text-lg">
+			<div className="w-[80%] md:w-1/2 lg:w-1/3 m-auto mt-2 px-10 py-12 rounded-md text-gray-300 bg-primary flex flex-col justify-items-center align-middle ">
+				<p className="p-1 text-center m-auto text-white font-semibold text-lg">
 					Sign up
 				</p>
 				<div className="flex flex-col w-3/4 m-auto">

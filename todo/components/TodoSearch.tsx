@@ -1,17 +1,24 @@
-import React from 'react';
+import React from "react"
 
 interface Props {
-    search: String | any,
-    setSearch: Function
+	search: String | any
+	setSearch: Function
 }
 
-const TodoSearch:React.FC<Props> = ({search, setSearch}) => {
-    return (
-        <div className='flex align-middle w-4/6'>
-            <p className='text-sm text-gray-400 h-10 w-1/5 text-centre px-5 py-2.5'>Search</p>
-            <input value={search} onChange={(e) => setSearch(e.target.value)} placeholder={"Enter search string..."} className='bg-primary w-4/5 px-4 py-2 text-white text-xs rounded-full ml-2 outline-none'/>
-        </div>
-    );
-};
+const TodoSearch: React.FC<Props> = ({ search, setSearch }) => {
+	return (
+		<div className="flex align-middle">
+			<p className="text-gray-400 h-10 md:w-[10%] hidden lg:block text-centre text-md px-1 py-2.5 md:mr-2">
+				Search
+			</p>
+			<input
+				value={search}
+				onChange={e => setSearch(e.target.value)}
+				placeholder={"Enter search string..."}
+				className="bg-primary w-[90%] px-4 py-2 text-white text-md rounded-lg ml-4 outline-none overflow-hidden"
+			/>
+		</div>
+	)
+}
 
-export default TodoSearch;
+export default TodoSearch

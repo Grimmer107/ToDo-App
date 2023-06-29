@@ -39,8 +39,8 @@ export default function Home() {
 
 	if (status === "unauthenticated") {
 		return (
-			<div className="m-auto w-5/6 h-screenset text-center">
-				Access Denied
+			<div className="m-auto w-[100%] h-[100vh] flex text-center">
+				<span className="m-auto">Access Denied</span>
 			</div>
 		)
 	}
@@ -69,7 +69,7 @@ export default function Home() {
 	return (
 		<div className="p-0 relative">
 			<Header email={session?.user?.email as String} />
-			<div className="bg-background p-1 m-auto w-1/2 h-screenset rounded-lg overscroll-none">
+			<div className="bg-background p-1 mt-10 m-auto w-[90%] md:w-3/4 lg:w-1/2 h-screenset rounded-lg overscroll-none">
 				<TodoListCreate setUpdate={mutate} />
 				<div className="flex justify-between m-auto p-0.5 pl-2 w-5/6 mt-0.5 px-2">
 					<p className="text-xs text-gray-500 font-bold my-auto pl-4">

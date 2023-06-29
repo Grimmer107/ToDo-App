@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import { useSession } from "next-auth/react"
 import useSWR from "swr"
 import { useRouter } from "next/router"
-
+import ClipLoader from "react-spinners/ClipLoader"
 import { TodoContext } from "@/context/TodoContext"
 import TodosList from "@/components/TodosList"
 import TodoCreate from "@/components/TodoCreate"
@@ -31,8 +31,15 @@ export default function Todo() {
 
 	if (status === "loading") {
 		return (
-			<div className="m-auto w-5/6 h-screenset text-center">
-				Loading...
+			<div className="m-auto w-[100%] h-[100vh] flex">
+				<ClipLoader
+					color={"black"}
+					loading={true}
+					cssOverride={{ margin: "auto" }}
+					size={150}
+					aria-label="Loading Spinner"
+					data-testid="loader"
+				/>
 			</div>
 		)
 	}

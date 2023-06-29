@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { useSession } from "next-auth/react"
 import useSWR from "swr"
-import CircleLoader from "react-spinners/CircleLoader"
+import ClipLoader from "react-spinners/ClipLoader"
 import TodoListCreate from "@/components/TodoListCreate"
 import TodoFilter from "@/components/TodoFilter"
 import TodoItemList from "@/components/TodoItemList"
@@ -23,13 +23,12 @@ export default function Home() {
 	)
 
 	if (status === "loading") {
-		// return <div className='m-auto w-5/6 h-screenset text-center'>Loading...</div>
 		return (
-			<div className="m-auto w-5/6 h-screenset text-center">
-				<CircleLoader
+			<div className="m-auto w-[100%] h-[100vh] flex">
+				<ClipLoader
 					color={"black"}
 					loading={true}
-					// cssOverride={}
+					cssOverride={{ margin: "auto" }}
 					size={150}
 					aria-label="Loading Spinner"
 					data-testid="loader"

@@ -29,6 +29,8 @@ export default function Todo() {
 		{ suspense: true }
 	)
 
+	console.log("hi", data)
+
 	if (status === "loading") {
 		return (
 			<div className="m-auto w-[100%] h-[100vh] flex">
@@ -48,6 +50,16 @@ export default function Todo() {
 		return (
 			<div className="m-auto w-5/6 h-screenset text-center">
 				Access Denied
+			</div>
+		)
+	}
+
+	if (data.error) {
+		return (
+			<div className="m-auto w-[100%] h-[100vh] flex">
+				<h1 className="m-auto text-primary text-xl font-bold">
+					Internal Server Error!
+				</h1>
 			</div>
 		)
 	}
